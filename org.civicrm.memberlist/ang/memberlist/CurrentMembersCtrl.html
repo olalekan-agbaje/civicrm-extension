@@ -1,0 +1,41 @@
+<div class="crm-container">
+    <form name="myForm" crm-ui-id-scope>
+
+        <div crm-ui-accordion="{title: ts('List of Current Members')}">
+            <div id="filter-div">
+                <input crm-ui-datepicker="{time: false, date: 'dd-mm-yy'}" placeholder="Enter Start Date From" ng-model="dateFrom">
+                <input crm-ui-datepicker="{time: false, date: 'dd-mm-yy'}" placeholder="Enter Start Date To"ng-model="dateTo">
+                <button ng-click="doFilter(dateFrom,dateTo)">Filter By Date</button>
+            </div>
+
+            <div class="crm-block">
+                <div class="crm-group">
+                    <table class="selector row-highlight">
+                        <thead class="sticky">
+                            <tr>
+                                <th></th>
+                                <th>Display Name</th>
+                                <th>Type</th>
+                                <th>Member Since</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Source</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tr ng-repeat="contact in currentMembers">
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ contact['contact_id.display_name'] }}</td>
+                            <td>{{ contact['membership_type_id.name'] }}</td>
+                            <td>{{ contact.join_date | date:"longDate"}}</td>
+                            <td>{{ contact.start_date | date:"longDate"}}</td>
+                            <td>{{ contact.end_date | date:"longDate"}}</td>
+                            <td>{{ contact['contact_id.source'] }}</td>
+                            <td>{{ contact['status_id.name'] }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
