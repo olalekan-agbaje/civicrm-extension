@@ -62,37 +62,6 @@
 
   });
 
-//    angular.module('memberlist').filter('filterDate',function($scope,currentMembers){
-//        var parseDate = function(input){
-//            return Date.parse(input);
-//        };
-//
-//        var members = currentMembers.values;
-//        var dateFrom = $scope.dateFrom;
-//        var dateTo = $scope.dateTo;
-//
-//        if(dateFrom.length === 0){
-//            dateFrom = '01-01-1980';
-//        };
-//        if(dateTo.length === 0){
-//            dateTo = '01-01-2017';
-//        };
-//
-//        var from = parseDate(dateFrom);
-//        var to = parseDate(dateTo);
-//        var result = [];
-//
-//        for (var i = 0; i < members.length; i++) {
-//            var startDate = parseDate(members[i].start_date);
-//            if (startDate >= from && to >= startDate) {
-//                result.push(members[i]);
-//            }
-//        }
-//        $scope.currentMembers = result;
-//    });
-
-
-
 })(angular, CRM.$, CRM._);
 
 
